@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import './App.css';
 
 function App() {
   const [step, setStep] = useState(1);
@@ -49,18 +50,13 @@ function App() {
   return (
     <div>
 
-       <div style={{ height: 20, background: '#eee', borderRadius: 10, marginBottom: 20 }}>
+       <div className='bar-progress'>
         <div
-          style={{
-            width: `${progress}%`,
-            height: '100%',
-            background: 'purple',
-            borderRadius: 10,
-            transition: 'width 0.3s ease'
-          }}
+          className='bar-fill'
+          style={{ width: `${progress}%` }}
         ></div>
       </div>
-      <p>{Math.round(progress)}% completed</p>
+      <p className='progress-text'>{Math.round(progress)}% completed</p>
 
       {step === 1 && (
         <>
@@ -73,6 +69,7 @@ function App() {
           <div>
             {[0,1,2,3,4,5,6,7,8,9].map(num => (
               <button
+                className='digit-btn'
                 key={num}
                 onClick={() => handlePeopleButtonClick(num)}
               >
@@ -82,6 +79,7 @@ function App() {
           </div>
           <button
             onClick={handleSubmit}
+            className='submit-btn'
             disabled={answers.peopleCount === ''}
           >
             Submit
@@ -104,6 +102,7 @@ function App() {
           </div>
           <button
             onClick={handleSubmit}
+            className='submit-btn'
             disabled={answers.activity === ''}
           >
             Submit
@@ -125,6 +124,7 @@ function App() {
           </div>
           <button
             onClick={handleSubmit}
+            className='submit-btn'
             disabled={answers.timeSpent === ''}
           >
             Submit
@@ -146,6 +146,7 @@ function App() {
           </div>
           <button
             onClick={handleSubmit}
+            className='submit-btn'
             disabled={answers.recommend === ''}
           >
             Submit
@@ -157,7 +158,10 @@ function App() {
         <>
         <h1>Thank you for making the area better!</h1>
         <p>Last year, 124 community’s answers contributed to the expansion of the Spoorpark.</p>
-        <button onClick={() => goBackHomepage()}>Next input</button>
+        <p>Scan for a chance to win €15 <b>bol.com</b> giftcard</p>
+        <button 
+        className='submit-btn'
+        onClick={() => goBackHomepage()}>Next input</button>
         </>
       )}
     </div>

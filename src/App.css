@@ -1,0 +1,61 @@
+h1 {
+  text-align: center;
+}
+
+.bar-progress {
+  height: 20px;
+  background: #eee;
+  border-radius: 10px;
+  margin-bottom: 2px;
+  width: 50%;
+  margin: 0 auto;
+}
+
+.bar-fill {
+  height: 100%;
+  background: #FE5C01;
+  border-radius: 10px;
+  transition: width 0.3s ease;    
+}
+
+.progress-text {
+  margin-top: 0;
+  text-align: center;
+  font-size: clamp(0.8rem, 1.5vw, 2rem);
+}
+
+.submit-btn {
+  background-color: #FE5C01;
+  color: #ffffff;
+  border: 1px solid white;
+  padding: 10px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: clamp(0.8rem, 1.5vw, 2rem);
+  transition: transform 0.1s ease-in;
+}
+
+.submit-btn:hover:enabled {
+  background-color: #e65500;
+  transform: scale(1.1);
+}
+
+.digit-btn {
+  background-color: #ffffff;
+  border-radius: 50%;
+  width: 120px;
+  border: solid #FE5C01 1px;
+  height: 120px;
+  cursor: pointer;
+  font-size: clamp(0.8rem, 1.5vw, 2rem);
+  margin: 5px;
+}
+
+button:disabled {
+  background-color: #ccc; 
+  color: #666;            
+  cursor: not-allowed;    
+  opacity: 0.6;           
+}
+
+
