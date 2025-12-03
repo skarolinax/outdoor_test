@@ -91,9 +91,10 @@ function App() {
       {step === 2 && (
         <>
           <h1>What kind of activity are most people doing?</h1>
-          <div>
+          <div className='button-card-container'>
             {['Sitting, resting', 'Stretching, mild activity', 'Vigorous movement'].map(act => (
               <button
+                className={`card-btn ${answers.activity === act ? 'selected' : ''}`}
                 key={act}
                 onClick={() => handleActivityChange(act)}
               >
@@ -114,9 +115,10 @@ function App() {
       {step === 3 && (
         <>
           <h1>On average, how long do you spend exercising/hanging out at this location?</h1>
-          <div>
+          <div className='button-card-container'>
             {['Maximum 30 minutes', 'Around an hour', 'More than 1.5 hour'].map(act => (
               <button
+                className={`card-btn ${answers.timeSpent === act ? 'selected' : ''}`}
                 key={act}
                 onClick={() => handleTimespentChange(act)}>
                 {act}
