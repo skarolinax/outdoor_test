@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import './App.css';
+import { FaThumbsUp, FaThumbsDown } from 'react-icons/fa';
 
 function App() {
   const [step, setStep] = useState(1);
@@ -135,19 +136,29 @@ function App() {
       {step === 4 && (
         <>
           <h1>Would you recommend this football field to a friend?</h1>
-          <div>
-            {['Yes', 'No'].map(act => (
-              <button
-                key={act}
-                onClick={() => handleRecommend(act)}>
-                {act}
-              </button>
-            ))}
+          <div className='button-card-container'>
+            <button
+              className={`card-btn ${answers.recommend === 'Yes' ? 'selected' : ''}`}
+              onClick={() => handleRecommend('Yes')}
+            >
+              <FaThumbsUp size={60} />
+              <span>Yes</span>
+            </button>
+
+            <button
+              className={`card-btn ${answers.recommend === 'No' ? 'selected' : ''}`}
+              onClick={() => handleRecommend('No')}
+            >
+              <FaThumbsDown size={60} />
+              <span>No</span>
+            </button>
           </div>
+
           <button
             onClick={handleSubmit}
             className='submit-btn'
             disabled={answers.recommend === ''}
+            style={{ marginTop: 20 }}
           >
             Submit
           </button>
